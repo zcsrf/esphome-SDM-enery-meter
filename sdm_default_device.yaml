@@ -32,19 +32,34 @@ sensor:
   lambda: |-
     auto sdm_sensors = new SDMComponent();
     App.register_component(sdm_sensors);
-    return {sdm_sensors->voltage_sensor, sdm_sensors->current_sensor, sdm_sensors->power_sensor, sdm_sensors->energy_import_sensor};
+    return {sdm_sensors->voltage_sensor, sdm_sensors->current_sensor, sdm_sensors->power_sensor, sdm_sensors->apparent_power_sensor, sdm_sensors->power_factor_sensor, sdm_sensors->phase_angle_sensor, sdm_sensors->line_frequency_sensor, sdm_sensors->energy_import_sensor, sdm_sensors->read_error_count_sensor};
   sensors:
     - name: "Voltage"
       unit_of_measurement: V
-      accuracy_decimals: 1
+      accuracy_decimals: 2
     - name: "Current"
       unit_of_measurement: A
-      accuracy_decimals: 1
+      accuracy_decimals: 2
     - name: "Power"
       unit_of_measurement: W
-      accuracy_decimals: 1
+      accuracy_decimals: 2
+    - name: "Apparent Power"
+      unit_of_measurement: VA
+      accuracy_decimals: 2
+    - name: "Power Factor"
+      unit_of_measurement: PF
+      accuracy_decimals: 2
+    - name: "Phase Angle"
+      unit_of_measurement: º
+      accuracy_decimals: 2
+    - name: "Line Frequency"
+      unit_of_measurement: Hz
+      accuracy_decimals: 2
     - name: "Energy import"
       unit_of_measurement: kWh
+      accuracy_decimals: 2
+    - name: "Read Error Count"
+      unit_of_measurement: Total
       accuracy_decimals: 1
 
 captive_portal:
@@ -53,6 +68,9 @@ logger:
   baud_rate: 0
   # level: VERY_VERBOSE
   esp8266_store_log_strings_in_flash: False
+
+web_server:
+  port: 80
 
 # Enable Home Assistant API
 api:
