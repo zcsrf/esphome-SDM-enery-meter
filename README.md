@@ -1,11 +1,16 @@
+Note: This is a fork from TheSDTM/esphome-SDM-energy-meter project, for more info check is project.
+
 # Esphome SDM enery meter custom component
 
-This is a fully-working example of reading data from SDM enetry meter (I used SDM630) using device with Esphome firmware (I used Sonoff TH16).
+Currently I am using Home Assistant with multiple ESPHome sensors.
 
-In this implementation I am using HardwareSerial to read data from SDM, because it's more stable than SoftwareSerial.
+With the help of the TheSDTM project, I implemented my SDM230 as a ESPHome device.
 
-You should use TTL to RS485 converter and connect RX port of converter to TX port of Esphome device and TX port of converter to RX port of Esphome device. I used converter like this https://aliexpress.ru/item/32833209309.html
+Following the steps of TheSDTM, I am using HardwareSerial to read the data. Rememeber you will need to convert the RS485 protocol to UART TTL.
 
-It was developed for SDM630. You may need to change reading registers that suits your device. You can find all reggisters in sdm/SDM.h file.
+Since I have a SDM230 I addapted the project to it and to my needs.
 
-Also here you can find Esphome guide to add new sensors to this code (read "Bonus: Sensors With Multiple Output Values" section): https://esphome.io/components/sensor/custom.html
+You can use the ESPHome guide to custom sensors to get further informations on how this works: https://esphome.io/components/sensor/custom.html
+
+Best Regards,
+José Ferreira
