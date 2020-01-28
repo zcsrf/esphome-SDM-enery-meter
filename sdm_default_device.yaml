@@ -1,5 +1,5 @@
 esphome:
-  name: example_sdm_device
+  name: sdm_default_device
   platform: ESP8266
   board: esp01_1m
   includes:
